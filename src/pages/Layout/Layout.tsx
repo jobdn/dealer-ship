@@ -1,20 +1,11 @@
 import { Outlet } from "react-router-dom";
 import styles from "./Layout.module.css";
-import { NavLink } from "react-router-dom";
+import { Navbar } from "../../components/Navbar";
 
 export const Layout = () => {
   return (
     <div className={styles.pageWrapper}>
-      <nav className={styles.navbar}>
-        <ul>
-          <li>
-            <NavLink to="/cars">Автомобили</NavLink>
-          </li>
-          <li>
-            <NavLink to="/">Домой</NavLink>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
 
       <div>
         <header>
