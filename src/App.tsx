@@ -1,5 +1,5 @@
 import "./App.css";
-import { AuthForm } from "./component/AuthForm";
+import {AuthForm}  from "./component/AuthForm";
 
 function App() {
   return (
@@ -9,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+export default  App ;
