@@ -1,15 +1,31 @@
-import { createBrowserRouter } from "react-router-dom";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 import { Layout } from "./Layout";
 import { Home } from "./Home";
 import { Cars } from "./Cars";
+import { Auth } from "./Auth";
+import { ProtectedRoute } from "../components/ProtectedRoute";
+import { AuthLayout } from "./AuthLayout";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "cars", element: <Cars /> },
-    ],
-  },
-]);
+export const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<AuthLayout />}>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />}></Route>
+        <Route
+          path="cars"
+          element={
+            <ProtectedRoute>
+              <Cars />
+            </ProtectedRoute>
+          }
+        ></Route>
+      </Route>
+
+      <Route path="/auth" element={<Auth />}></Route>
+    </Route>
+  )
+);
