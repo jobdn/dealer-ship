@@ -1,0 +1,10 @@
+.heroWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.hero {
+  max-width: 80%;
+}
