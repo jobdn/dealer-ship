@@ -1,7 +1,8 @@
+import { memo } from "react";
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = memo(function NavbarMemo() {
   return (
     <nav className={styles.navbar}>
       <ul>
@@ -14,4 +15,4 @@ export const Navbar = () => {
       </ul>
     </nav>
   );
-};
+});
