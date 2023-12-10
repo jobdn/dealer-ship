@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import styles from "./Layout.module.css";
 import { Navbar } from "../../components/Navbar";
+import { Header } from "../../components/Header";
 
 export const Layout = () => {
   return (
@@ -8,17 +9,7 @@ export const Layout = () => {
       <Navbar />
 
       <div>
-        <header>
-          <h1>DealerShip</h1>
-          <ul className={styles.headerButtons}>
-            <li>
-              <button>Вход</button>
-            </li>
-            <li>
-              <button>Регистрация</button>
-            </li>
-          </ul>
-        </header>
+        <Header />
         <main>
           <Outlet />
         </main>

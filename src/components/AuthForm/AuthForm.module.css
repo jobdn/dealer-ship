@@ -1,0 +1,81 @@
+input {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: 100%;
+  color: inherit;
+  line-height: normal;
+  width: auto; /* или можно установить конкретную ширину */
+  height: auto; /* или можно установить конкретную высоту */
+  vertical-align: middle;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  justify-self: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.formContainer {
+  width: 300px;
+  margin: 0, auto;
+}
+
+.title {
+  margin-bottom: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.errorMessage {
+  color: #c5322d;
+  font-size: 10px;
+  display: inline-block;
+}
+
+.button {
+  font-size: 14px;
+  color: white;
+  background: #c5322d;
+  border-bottom: 1px solid #cccccc;
+  margin-top: 30px;
+  width: 300px;
+  height: 40px;
+  text-transform: uppercase;
+}
+
+.input {
+  border-bottom: 1px solid #cccccc;
+  width: 300px;
+  height: 50px;
+}
+
+.inputCheckbox {
+  margin-right: 15px;
+}
+
+.containerCheckbox {
+  margin-top: 30px;
+  display: flex;
+  align-self: flex-start;
+}
+
+.formToggler {
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: underline;
+  color: #747bff;
+}
+
+.formToggler:hover {
+  cursor: pointer;
+}
