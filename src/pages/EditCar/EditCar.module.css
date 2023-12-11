@@ -1,0 +1,13 @@
+.editRow {
+  margin-bottom: 8px;
+}
+
+.editInput {
+  padding: 8px 10px;
+  margin-left: 20px;
+}
+
+.editBtn {
+  margin-top: 16px;
+  min-width: 255px;
+}

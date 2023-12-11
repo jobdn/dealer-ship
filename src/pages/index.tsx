@@ -9,6 +9,7 @@ import { Cars } from "./Cars";
 import { Auth } from "./Auth";
 import { ProtectedRoute } from "../components/ProtectedRoute";
 import { AuthLayout } from "./AuthLayout";
+import { EditCar } from "./EditCar";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +21,14 @@ export const router = createBrowserRouter(
           element={
             <ProtectedRoute>
               <Cars />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="cars/:id"
+          element={
+            <ProtectedRoute>
+              <EditCar />
             </ProtectedRoute>
           }
         ></Route>

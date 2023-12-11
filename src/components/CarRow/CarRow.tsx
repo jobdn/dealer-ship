@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { Car } from "../../shared/types";
 import DeleteImg from "./assets/delete.png";
 
@@ -15,7 +16,9 @@ export const CarRow = (props: CarItemProps) => {
 
   return (
     <tr>
-      <td>{car.id}</td>
+      <td>
+        <NavLink to={`/cars/${car.id}`}>{car.id}</NavLink>
+      </td>
       <td>{car.vehicle_brand}</td>
       <td>{car.brand_model}</td>
       <td>{car.vin}</td>
