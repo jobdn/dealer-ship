@@ -142,7 +142,7 @@ const AuthForm = () => {
         return;
       }
 
-      setEmailError("Изменить текст ошибки");
+      setEmailError("Неправильный логин или пароль");
     }
   };
 
