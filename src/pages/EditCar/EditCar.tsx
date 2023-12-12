@@ -22,7 +22,7 @@ const humanReadableFields = {
   color: "Цвет",
   price: "Цена",
   creatorId: "Номер создателя",
-  editorId: "Номер изменятеля",
+  editorId: "Номер редактора",
 };
 
 export function mapCarFieldsToHumanReadable(fieldName: CarFieldName) {
@@ -150,6 +150,7 @@ export const EditCar = () => {
                 className={styles.editInput}
                 value={carFieldValue}
                 onChange={handleFieldChange}
+                disabled={carFieldName === "id"}
               />
             </label>
           </div>
