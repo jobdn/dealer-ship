@@ -68,3 +68,25 @@ button:focus-visible {
 li {
   list-style-type: none;
 }
+
+button:disabled {
+  cursor: not-allowed;
+  border: none;
+}
+
+fieldset,
+legend {
+  padding: 0;
+  border: none;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-family: inherit;
+  line-height: normal;
+  vertical-align: middle;
+}

@@ -79,5 +79,5 @@ export const Cars = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cars, isLoading]);
 
-  return <div className={styles.carList}>{content}</div>;
+  return <div>{content}</div>;
 };

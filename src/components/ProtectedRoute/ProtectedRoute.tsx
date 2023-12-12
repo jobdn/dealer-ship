@@ -8,7 +8,7 @@ export interface ProtectedRouteProps {
 export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const auth = useAuth();
 
-  if (!auth?.user.isAuth) {
+  if (!auth?.user?.isAuth) {
     alert("Чтобы увидеть список авто, войдите в приложение");
     return <Navigate to="/" />;
   }

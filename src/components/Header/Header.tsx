@@ -11,8 +11,6 @@ export const Header = () => {
     }
   };
 
-  console.log("auth: ", auth);
-
   return (
     <header>
       <h1>DealerShip</h1>

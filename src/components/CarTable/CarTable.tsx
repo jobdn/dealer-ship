@@ -21,7 +21,7 @@ export const CarTable = (props: CarTableProps) => {
           <th>Цвет</th>
           <th>Цена</th>
           <th>Номер создателя</th>
-          <th>Номер изменятеля</th>
+          <th>Номер редактора</th>
         </tr>
       </thead>
       <tbody>
