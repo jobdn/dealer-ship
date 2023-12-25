@@ -9,6 +9,8 @@ export interface CarTableProps {
 export const CarTable = (props: CarTableProps) => {
   const { cars, onDelete } = props;
 
+  if (!cars.length) return <h3>В центре нет авто</h3>;
+
   return (
     <table>
       <thead>
