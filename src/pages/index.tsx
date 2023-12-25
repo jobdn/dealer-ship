@@ -10,6 +10,7 @@ import { Auth } from "./Auth";
 import { ProtectedRoute } from "../components/ProtectedRoute";
 import { AuthLayout } from "./AuthLayout";
 import { EditCar } from "./EditCar";
+import { AddCar } from "./AddCar";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +30,14 @@ export const router = createBrowserRouter(
           element={
             <ProtectedRoute>
               <EditCar />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="add-car/:id"
+          element={
+            <ProtectedRoute>
+              <AddCar />
             </ProtectedRoute>
           }
         ></Route>

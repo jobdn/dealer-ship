@@ -1,0 +1,13 @@
+.addRow {
+  margin-bottom: 8px;
+}
+
+.addInput {
+  padding: 8px 10px;
+  margin-left: 20px;
+}
+
+.addBtn {
+  margin-top: 16px;
+  min-width: 255px;
+}
