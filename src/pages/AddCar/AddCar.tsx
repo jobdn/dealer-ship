@@ -83,7 +83,7 @@ export const AddCar = () => {
 
       toast("Автомобиль успешно добавлен");
 
-      navigate("/");
+      navigate("/cars");
     } catch (error) {
       toast((error as Error).message);
     } finally {
