@@ -140,6 +140,8 @@ export const EditCar = () => {
       {Object.entries(car || []).map((carField: any) => {
         const [carFieldName, carFieldValue] = carField;
 
+        if (carFieldName === "editorId" || carFieldName === "creatorId") return;
+
         return (
           <div className={styles.editRow} key={carFieldName}>
             <label htmlFor="">
