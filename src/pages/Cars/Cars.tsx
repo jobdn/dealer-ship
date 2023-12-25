@@ -76,8 +76,6 @@ export const Cars = () => {
   const content = useMemo(() => {
     if (isLoading) return <h3>Загрзка автомобилей</h3>;
 
-    if (!cars.length) return <h3>В центре нет авто. Обратитесь позже</h3>;
-
     return (
       <>
         <div className={styles.wrapper}>
