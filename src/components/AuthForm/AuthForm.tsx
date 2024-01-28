@@ -30,8 +30,6 @@ function isLoginResponse(res: AuthResponse): res is LoginResponse {
 const AuthForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [emailDirty, setEmailDirty] = useState(false);
-  const [passwordDirty, setPasswordDirty] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [formValid, setFormValid] = useState(false);
@@ -74,17 +72,6 @@ const AuthForm = () => {
 
     setPasswordError("");
     setPassword(e.target.value);
-  };
-
-  const blurHandler = (e) => {
-    switch (e.target.name) {
-      case "email":
-        setEmailDirty(true);
-        break;
-      case "password":
-        setPasswordDirty(true);
-        break;
-    }
   };
 
   const emailIsValid = () => {
@@ -156,7 +143,6 @@ const AuthForm = () => {
           <input
             onChange={(e) => emailHandler(e)}
             value={email}
-            onBlur={(e) => blurHandler(e)}
             className={styles.input}
             type="text"
             id="email"
@@ -169,7 +155,6 @@ const AuthForm = () => {
           <input
             onChange={(e) => passwordHandler(e)}
             value={password}
-            onBlur={(e) => blurHandler(e)}
             className={styles.input}
             type="password"
             id="password"
