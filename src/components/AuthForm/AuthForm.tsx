@@ -2,10 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import styles from "./AuthForm.module.css";
 import { useNavigate } from "react-router-dom";
-import { TOKEN } from "../../shared/constants";
 import { AuthContext } from "../../shared/UI/AuthProvider";
 import { User } from "../../shared/types";
-import { useLocalStorage } from "../../shared/hooks/useLocalStorage";
 
 type FormState = "login" | "register";
 
@@ -30,15 +28,12 @@ function isLoginResponse(res: AuthResponse): res is LoginResponse {
 const AuthForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [emailDirty, setEmailDirty] = useState(false);
-  const [passwordDirty, setPasswordDirty] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [formValid, setFormValid] = useState(false);
   const [formState, setFormState] = useState<FormState>("login");
   const navigate = useNavigate();
   const authContext = useContext(AuthContext);
-  const [token, setToken] = useLocalStorage(TOKEN, "");
 
   const handleChangeForm = () => {
     setFormState((currentState) =>
@@ -74,17 +69,6 @@ const AuthForm = () => {
 
     setPasswordError("");
     setPassword(e.target.value);
-  };
-
-  const blurHandler = (e) => {
-    switch (e.target.name) {
-      case "email":
-        setEmailDirty(true);
-        break;
-      case "password":
-        setPasswordDirty(true);
-        break;
-    }
   };
 
   const emailIsValid = () => {
@@ -133,7 +117,6 @@ const AuthForm = () => {
           authContext.login({ email: authData.user.email, isAuth: true });
         }
 
-        setToken(authData.token);
         navigate("/");
       }
     } catch (error) {
@@ -156,7 +139,6 @@ const AuthForm = () => {
           <input
             onChange={(e) => emailHandler(e)}
             value={email}
-            onBlur={(e) => blurHandler(e)}
             className={styles.input}
             type="text"
             id="email"
@@ -169,7 +151,6 @@ const AuthForm = () => {
           <input
             onChange={(e) => passwordHandler(e)}
             value={password}
-            onBlur={(e) => blurHandler(e)}
             className={styles.input}
             type="password"
             id="password"
