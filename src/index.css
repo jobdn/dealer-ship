@@ -90,3 +90,20 @@ input {
   line-height: normal;
   vertical-align: middle;
 }
+
+table {
+  border-spacing: 1;
+}
+
+th,
+td {
+  border: 1px solid #fff;
+}
+
+td {
+  padding: 10px 15px;
+}
+
+th {
+  font-weight: 800;
+}
